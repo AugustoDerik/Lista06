@@ -22,9 +22,9 @@ public class EntradaDeDados extends JPanel {
 		label.setForeground(Color.BLACK);
 		label.setText("Digite um número:");
 		JTextField texto = new JTextField(null, 5);
-		add(texto);
+		
 		JButton b = new JButton("OK");
-		add(b);
+		
 		b.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int num = Integer.parseInt(texto.getText());
@@ -32,22 +32,24 @@ public class EntradaDeDados extends JPanel {
 			}
 		});
 		add(label);
+		add(texto);
+		add(b);
 	}
 
-	public Integer maior(ArrayList<Integer> lista) {
-		Integer maior = 0;
-		for (Integer integer : lista) {
-			if (integer > maior)
-				maior = integer;
+	public int maior(ArrayList<Integer> lista) {
+		int maior = 0;
+		for (int n : lista) {
+			if (n > maior)
+				maior = n;
 		}
 		return maior;
 	}
 
-	public Integer menor(ArrayList<Integer> lista) {
-		Integer menor = 0;
-		for (Integer integer : lista) {
-			if (integer <= menor)
-				menor = integer;
+	public int menor(ArrayList<Integer> lista) {
+		int menor = 0;
+		for (int n : lista) {
+			if(n <= menor)
+				menor = n;
 		}
 		return menor;
 	}
